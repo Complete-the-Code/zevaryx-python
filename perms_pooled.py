@@ -55,6 +55,10 @@ sorted_percs = {
     k: v for k, v in sorted(highest_percs.items(), key=lambda item: item[1])
 }
 
-for i in range(10):
+get_count = 10
+if (curr_count := len(sorted_percs)) < 10:
+    get_count = curr_count
+
+for i in range(get_count):
     k = list(sorted_percs.keys())[i]
     print(f"{k}: {highest_matches[k]}")
