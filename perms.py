@@ -32,10 +32,8 @@ for string in args.strings:
         f"\nGetting close matches for {string} (cutoff={args.cutoff}, matches={args.matches})"
     )
     string = string.lower()
-    print(
-        "\n".join(
-            difflib.get_close_matches(
-                string, words, n=args.matches, cutoff=args.cutoff
-            )
-        )
+    matches = difflib.get_close_matches(
+        string, words, cutoff=args.cutoff, n=args.matches
     )
+    true_matches = [x for x in matches if all(y in x for y in string)]
+    print("\n".join(x for x in true_matches))
