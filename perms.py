@@ -35,5 +35,9 @@ for string in args.strings:
     matches = difflib.get_close_matches(
         string, words, cutoff=args.cutoff, n=args.matches
     )
-    true_matches = [x for x in matches if all(y in x for y in string)]
+    true_matches = [
+        x
+        for x in matches
+        if all(string.count(y) <= x.count(y) for y in string)
+    ]
     print("\n".join(x for x in true_matches))
