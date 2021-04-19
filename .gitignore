@@ -138,4 +138,4 @@ dmypy.json
 cython_debug/
 
 words.txt
-words.sha256
+strings.txt
