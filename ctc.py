@@ -1,4 +1,5 @@
 from algos import dictcheck, hashcheck
+import ciphers
 import os
 import re
 from utils import words as uwords
@@ -24,6 +25,7 @@ def main_menu():
  2) Remove a string to check
  3) Compare strings to dictionary
  4) Compare strings to hashes
+ 5) Ciphers
 
  0) Quit
         """
@@ -48,6 +50,8 @@ def main_menu():
             dictcheck.menu(strings, words)
         elif choice == "4":
             hashcheck.menu(strings)
+        elif choice == "5":
+            ciphers.menu(strings)
         elif choice == "0":
             break
 
