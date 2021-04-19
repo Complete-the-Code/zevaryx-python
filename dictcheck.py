@@ -10,13 +10,12 @@ with open("words.txt") as f:
 
 matches = []
 
-total = factorial(len(string))
+total = len(words)
 
-for p in tqdm(
-    permutations(string), total=total, desc="Analyzing Permutations"
+for word in tqdm(
+    words, total=total, desc="Analyzing Permutations", unit="words"
 ):
-    perm = "".join(p)
-    if perm.lower() in words:
-        matches.append(perm)
+    if sorted(string.lower()) == sorted(word.lower()):
+        matches.append(word)
 
 print("\n".join(matches) if matches else "None found")
