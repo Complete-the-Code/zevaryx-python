@@ -140,3 +140,8 @@ cython_debug/
 words.txt
 strings.txt
 strings*
+*.csv
+split/
+*.zip
+*.7z
+gens/
